@@ -53,7 +53,7 @@ pipeline {
 
         stage('📝 Update K8s Manifest') {
             steps {
-                withCredentials([string(credentialsId: 'github-token', variable: 'GH_TOKEN')]) {
+                withCredentials([string(credentialsId: 'GH_USER', variable: 'GH_TOKEN')]) {
                     sh '''
                         git config user.email "jenkins@taskflow.com"
                         git config user.name "Jenkins CI"
