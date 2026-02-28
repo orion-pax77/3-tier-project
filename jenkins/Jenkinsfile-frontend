@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_USER    = 'kalpsoni18'
+        DOCKERHUB_USER    = 'kalpsoni'
         FRONTEND_IMAGE    = "${DOCKERHUB_USER}/taskflow-frontend"
         IMAGE_TAG         = "${BUILD_NUMBER}"
     }
