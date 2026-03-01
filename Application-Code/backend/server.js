@@ -14,7 +14,12 @@ app.use(express.json());
 // Routes
 app.use('/api/tasks', taskRoutes);
 
-// Health check
+// Health check (infra: ALB + k8s probes)
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK' });
+});
+
+// Health check (api style)
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
