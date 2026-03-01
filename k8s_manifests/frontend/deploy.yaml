@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: kalpsoni/taskflow-frontend:6
+          image: kalpsoni/taskflow-frontend:7
           ports:
             - containerPort: 80
           env:
