@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKERHUB_USER    = 'kalpsoni'
+        DOCKERHUB_USER    = 'orionpax77'
         FRONTEND_IMAGE    = "${DOCKERHUB_USER}/taskflow-frontend"
         IMAGE_TAG         = "${BUILD_NUMBER}"
     }
@@ -50,10 +50,10 @@ pipeline {
                     sh """
                         git config user.email "jenkins@taskflow.com"
                         git config user.name "Jenkins CI"
-                        sed -i "s|image: kalpsoni/taskflow-frontend:.*|image: kalpsoni/taskflow-frontend:${IMAGE_TAG}|" k8s_manifests/frontend/deploy.yaml
+                        sed -i "s|image: orionpax77/taskflow-frontend:.*|image: orionpax77/taskflow-frontend:${IMAGE_TAG}|" k8s_manifests/frontend/deploy.yaml
                         git add k8s_manifests/frontend/deploy.yaml
                         git commit -m "CI: Update frontend image to ${IMAGE_TAG}"
-                        git push https://\${GH_TOKEN}@github.com/kalpsoni18/three-tier-eks-project.git HEAD:main
+                        git push https://\${GH_TOKEN}@github.com/orion-pax77/3-tier-project.git HEAD:main
                     """
                 }
             }
