@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: kalpsoni/taskflow-backend:10
+          image: orionpax77/taskflow-backend:latest
           ports:
             - containerPort: 5000
           env:
