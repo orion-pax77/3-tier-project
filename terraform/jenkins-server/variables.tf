@@ -1,5 +1,5 @@
 variable "region" {
-  default = "us-west-2"
+  default = "us-eaast-1"
 }
 
 variable "instance_type" {
