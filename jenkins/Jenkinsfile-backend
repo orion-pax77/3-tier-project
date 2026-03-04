@@ -1,10 +1,10 @@
 pipeline {
     agent any
     environment {
-        DOCKERHUB_USER    = 'kalpsoni'
+        DOCKERHUB_USER    = 'orionpax77'
         BACKEND_IMAGE     = "${DOCKERHUB_USER}/taskflow-backend"
         IMAGE_TAG         = "${BUILD_NUMBER}"
-        MANIFEST_REPO     = 'https://github.com/kalpsoni18/three-tier-eks-project.git'
+        MANIFEST_REPO     = 'https://github.com/orion-pax77/3-tier-project.git'
     }
     stages {
         stage('📥 Checkout Code') {
@@ -58,10 +58,10 @@ pipeline {
                     sh """
                         git config user.email "jenkins@taskflow.com"
                         git config user.name "Jenkins CI"
-                        sed -i "s|image: kalpsoni/taskflow-backend:.*|image: kalpsoni/taskflow-backend:${IMAGE_TAG}|" k8s_manifests/backend/deploy.yaml
+                        sed -i "s|image: orionpax77/taskflow-backend:.*|image: orionpax77/taskflow-backend:${IMAGE_TAG}|" k8s_manifests/backend/deploy.yaml
                         git add k8s_manifests/backend/deploy.yaml
                         git commit -m "CI: Update backend image to ${IMAGE_TAG}"
-                        git push https://\${GH_TOKEN}@github.com/kalpsoni18/three-tier-eks-project.git HEAD:main
+                        git push https://\${GH_TOKEN}@github.com/orion-pax77/3-tier-project.git HEAD:main
                     """
                 }
             }
