@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/kalpsoni18/three-tier-eks-project.git
+    repoURL: https://github.com/orion-pax77/3-tier-project.git
     targetRevision: main
     path: k8s_manifests
 
